@@ -4,7 +4,8 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.all
+    # @posts = Post.paginate(page: params[:page], per_page: 4)
+    @pagy, @posts = pagy(Post.all)
   end
 
   # GET /posts/1
@@ -29,7 +30,7 @@ class PostsController < ApplicationController
     @post.user = current_user
     respond_to do |format|
       if @post.save
-        puts"=================#{format.request}=========="
+        # puts"=================#{format.request}=========="
         format.html { redirect_to @post, notice: 'Post was successfully created.' }
         #format.json { render :show, status: :created, location: @post }
       else

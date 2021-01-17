@@ -17,3 +17,5 @@ import 'bootstrap'
 import "../stylesheets/application.scss";
 
 import './details/index'
+require.context('../images', true)
+require('../stylesheets/notice.css')

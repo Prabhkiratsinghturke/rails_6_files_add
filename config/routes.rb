@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  root to: 'details#index'
+  # root to: 'details#index'
+  root to: 'posts#index'
   resources :details
   resources :posts
   # root to: 'welcome#home'
