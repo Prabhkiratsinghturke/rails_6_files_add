@@ -1,0 +1,13 @@
+//$('.delete').bind('ajax:success', function(){
+//    $(this).closest('tr').html('<%= j render 'detail', detail: @detail %>');
+//    $("tr td#edit").parent().replaceWith().html('<%= j render 'detail', detail: @detail %>');
+//})
+$('tr td a.edit').bind('ajax:success', function(){
+    $(this).parent().closest('tr').html('<%= j render 'detail', detail: @detail %>')
+})
+
+//$('tr td a.edit').parent().parent().html('<%= j render 'detail', detail: @detail %>')
+
+//$('.details-table').append('<%= j render 'detail', detail: @detail %>');
+$('#new-detail form').remove();
+$('#new-detail a').show();

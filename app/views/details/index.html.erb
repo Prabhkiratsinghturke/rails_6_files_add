@@ -1,0 +1,31 @@
+<%#= javascript_pack_tag 'index' %>
+<br>
+<br>
+
+<table style="margin-left: 10%" class='details-table'>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>email</th>
+      <th>terms and conditions</th>
+      <th>edit</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% Detail.all.each do |detail| %>
+      <%= render 'detail', detail: detail%>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<br>
+<div id='new-detail'>
+  <%= link_to 'add new detail', new_detail_path , id: 'new-detail-link'%>
+</div>
+
+<script>
+    $(document).ready(function(){
+        say_hello('ABer')
+    });
+</script>

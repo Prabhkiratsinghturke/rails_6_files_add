@@ -1,0 +1,17 @@
+<%= form_with model: @detail, local: false do |form|%>
+  <div class="field">
+    <%= form.label :'Name' %>
+    <%= form.text_field :name %>
+  </div>
+  <div class="field">
+    <%= form.label :'Email' %>
+    <%= form.email_field :email %>
+  </div>
+  <div class="field">
+    <%= form.label :'Image' %>
+    <%= form.file_field :image %>
+  </div>
+  <!--  <div class="actions">-->
+  <%= form.submit 'save' %>
+  <!--  </div>-->
+<% end %>
